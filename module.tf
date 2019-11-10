@@ -62,7 +62,7 @@ resource "aws_s3_bucket" "default" {
   acl           = var.acl
   region        = var.region
   force_destroy = var.force_destroy
-  policy        = var.policy
+  policy        = join("", data.aws_iam_policy_document.default.*.json)
 
   versioning {
     enabled = var.versioning_enabled

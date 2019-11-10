@@ -39,12 +39,6 @@ variable "acl" {
   default     = "log-delivery-write"
 }
 
-variable "policy" {
-  type        = string
-  description = "A valid bucket policy JSON document. Note that if the policy document is not specific enough (but still valid), Terraform may view the policy as constantly changing in a terraform plan. In this case, please make sure you use the verbose/specific version of the policy"
-  default     = ""
-}
-
 variable "lifecycle_prefix" {
   type        = string
   description = "Prefix filter. Used to manage object lifecycle events"
